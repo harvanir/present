@@ -6,9 +6,9 @@ Java Reflection & Design Pattern by example
 - java.lang.Class
 - java.lang.reflect.Constructor
 - java.lang.reflect.Field
+- java.lang.reflect.Modifier
 - java.lang.reflect.Method
 - java.lang.annotation.Annotation
-- java.lang.reflect.Modifier
 
 ## Design Pattern
 - Creational Patterns

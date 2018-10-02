@@ -10,7 +10,7 @@
   <packaging>jar</packaging>
 
   <name>present1</name>
-  <description>Demo project for Spring Boot</description>
+  <description>Java Reflection and Design Pattern by example</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -18,12 +18,6 @@
     <version>2.0.5.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <java.version>1.8</java.version>
-  </properties>
 
   <dependencies>
     <dependency>

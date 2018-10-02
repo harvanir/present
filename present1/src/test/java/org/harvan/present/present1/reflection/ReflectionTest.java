@@ -25,7 +25,7 @@ import org.junit.Test;
  */
 public class ReflectionTest {
 
-  private static final String CLASS_LOADER_STRING = "ClassToInspect";
+  private static final String CLASS_STRING = "org.harvan.present.present1.reflection.ClassToInspect";
 
   private void printField(Field[] fields) {
     for (Field field : fields) {
@@ -43,7 +43,7 @@ public class ReflectionTest {
   @Test
   public void test1InstantiateClass() throws Exception { // NOSONAR
     // load class by class loader
-    Class<?> clazz = Class.forName(CLASS_LOADER_STRING);
+    Class<?> clazz = Class.forName(CLASS_STRING);
     Assert.assertNotNull(clazz);
 
     // instantiate raw class
@@ -92,7 +92,7 @@ public class ReflectionTest {
   public void test3InstantiateConstructor()
       throws Exception { //NOSONAR
     // load class by class loader
-    Class<?> clazz = Class.forName(CLASS_LOADER_STRING);
+    Class<?> clazz = Class.forName(CLASS_STRING);
     Assert.assertNotNull(clazz);
 
     // get parameterize constructor
@@ -116,7 +116,7 @@ public class ReflectionTest {
   public void test4InstantiateConstructorAndItsField()
       throws Exception { //NOSONAR
     // load class by class loader
-    Class<?> clazz = Class.forName(CLASS_LOADER_STRING);
+    Class<?> clazz = Class.forName(CLASS_STRING);
 
     // get parameterize constructor
     Constructor<?> constructor = clazz.getConstructor(String.class, Integer.class);
@@ -190,7 +190,7 @@ public class ReflectionTest {
   @Test
   public void test6LoadAllClass() {
     List<Class<?>> classes = ClassUtils
-        .getClassByPackage("org.harvan.example.present.present1.reflection");
+        .getClassByPackage("org.harvan.present.present1.reflection");
     printObject(classes);
 
     Assert.assertFalse(classes.isEmpty());
