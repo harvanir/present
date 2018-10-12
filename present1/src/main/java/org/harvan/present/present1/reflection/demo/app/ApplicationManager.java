@@ -1,4 +1,4 @@
-package org.harvan.present.present1.reflection.app;
+package org.harvan.present.present1.reflection.demo.app;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -76,7 +76,7 @@ public class ApplicationManager {
 
   private static void loadBean(Class<?> clazz)
       throws IllegalAccessException, InstantiationException {
-    String prefix = clazz.getAnnotation(MyClassAnnotation.class).requestPrefix();
+    String prefix = clazz.getAnnotation(MyClassAnnotation.class).path();
     Object object = clazz.newInstance();
 
     loadHandler(object, prefix);
@@ -89,7 +89,7 @@ public class ApplicationManager {
       MyMethodAnnotation annotation = method.getDeclaredAnnotation(MyMethodAnnotation.class);
 
       if (annotation != null) {
-        String finalRequest = prefix + annotation.requestValue();
+        String finalRequest = prefix + annotation.path();
         Handler handler = HANDLER_MAP.get(finalRequest);
 
         if (handler != null) {

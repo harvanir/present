@@ -9,7 +9,7 @@ public class MethodToInspect {
 
   private String stringValue;
 
-  @MyMethodAnnotation(requestValue = "requestValue")
+  @MyMethodAnnotation(path = "requestValue")
   public String getStringValue() {
     return stringValue;
   }

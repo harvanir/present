@@ -1,4 +1,4 @@
-package org.harvan.present.present1.reflection.app;
+package org.harvan.present.present1.reflection.demo.app;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -21,10 +21,8 @@ public class Handler {
 
   @Override
   public String toString() {
-    final StringBuilder sb = new StringBuilder("Handler{");
-    sb.append("bean=").append(pair.getKey());
-    sb.append(", method=").append(pair.getValue());
-    sb.append('}');
-    return sb.toString();
+    return "Handler{" + "bean=" + pair.getKey()
+        + ", method=" + pair.getValue()
+        + '}';
   }
 }

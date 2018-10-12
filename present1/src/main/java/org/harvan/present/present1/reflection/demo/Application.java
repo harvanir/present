@@ -1,6 +1,6 @@
-package org.harvan.present.present1.reflection;
+package org.harvan.present.present1.reflection.demo;
 
-import org.harvan.present.present1.reflection.app.ApplicationManager;
+import org.harvan.present.present1.reflection.demo.app.ApplicationManager;
 
 /**
  * @author Harvan Irsyadi

@@ -1,4 +1,4 @@
-package org.harvan.present.present1.reflection.bean;
+package org.harvan.present.present1.reflection.demo.bean;
 
 import org.harvan.present.present1.reflection.annotation.MyClassAnnotation;
 import org.harvan.present.present1.reflection.annotation.MyMethodAnnotation;
@@ -6,15 +6,15 @@ import org.harvan.present.present1.reflection.annotation.MyMethodAnnotation;
 /**
  * @author Harvan Irsyadi
  */
-@MyClassAnnotation(requestPrefix = "/v1/users")
+@MyClassAnnotation(path = "/v1/users")
 public class ManagedBean1 {
 
-  @MyMethodAnnotation(requestValue = "/login")
+  @MyMethodAnnotation(path = "/login")
   public String getLoginValue() {
     return "Successfully logged in.";
   }
 
-  @MyMethodAnnotation(requestValue = "/logout")
+  @MyMethodAnnotation(path = "/logout")
   public String getLogoutValue() {
     return "Successfully logged out.";
   }

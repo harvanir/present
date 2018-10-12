@@ -5,7 +5,7 @@ import org.harvan.present.present1.reflection.annotation.MyClassAnnotation;
 /**
  * @author Harvan Irsyadi
  */
-@MyClassAnnotation(requestPrefix = "ClassToInspect")
+@MyClassAnnotation(path = "ClassToInspect")
 public class ClassToInspect {
 
   private String fieldString;
