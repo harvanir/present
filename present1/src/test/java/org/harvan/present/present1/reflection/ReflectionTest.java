@@ -132,22 +132,8 @@ public class ReflectionTest {
     fields[0].setAccessible(true);
     fields[1].setAccessible(true);
 
-    Assert.assertTrue(hasEqualsValue(object, fields, stringVal));
-    Assert.assertTrue(hasEqualsValue(object, fields, integerVal));
-  }
-
-  private boolean hasEqualsValue(Object objectClass, Field[] fields, Object expected) {
-    return Arrays.stream(fields).anyMatch(field -> {
-      try {
-        // get field requestValue of instantiate class
-        Object fieldObject = field.get(objectClass);
-
-        return expected.equals(fieldObject);
-      } catch (IllegalAccessException e) {
-        e.printStackTrace(); // NOSONAR
-      }
-      return false;
-    });
+    Assert.assertEquals(stringVal, fields[0].get(object));
+    Assert.assertEquals(integerVal, fields[1].get(object));
   }
 
   private void printObject(List<Class<?>> classes) {
