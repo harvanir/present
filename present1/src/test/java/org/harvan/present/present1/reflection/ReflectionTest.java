@@ -5,7 +5,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.Arrays;
 import java.util.List;
 import org.harvan.present.present1.reflection.annotation.MyClassAnnotation;
 import org.harvan.present.present1.reflection.annotation.MyMethodAnnotation;
@@ -180,13 +179,5 @@ public class ReflectionTest {
     printObject(classes);
 
     Assert.assertFalse(classes.isEmpty());
-  }
-
-  @Test
-  public void testReduce() {
-    Integer[] s = {1, 2, 3};
-
-    Integer reduce = Arrays.stream(s).reduce(2, (prev, next) -> prev < 2 ? next : 3);
-    System.out.println("Last: " + reduce);
   }
 }
