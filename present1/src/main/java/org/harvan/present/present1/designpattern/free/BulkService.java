@@ -1,4 +1,4 @@
-package org.harvan.present.present1.designpattern.command;
+package org.harvan.present.present1.designpattern.free;
 
 import org.harvan.present.present1.designpattern.Reactor;
 import reactor.core.publisher.Mono;
@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 /**
  * @author Harvan Irsyadi
  */
-public interface Command {
+public interface BulkService {
 
-  Mono<Reactor> execute();
+  Mono<Reactor> resendAll();
 }

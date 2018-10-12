@@ -195,4 +195,12 @@ public class ReflectionTest {
 
     Assert.assertFalse(classes.isEmpty());
   }
+
+  @Test
+  public void testReduce() {
+    Integer[] s = {1, 2, 3};
+
+    Integer reduce = Arrays.stream(s).reduce(2, (prev, next) -> prev < 2 ? next : 3);
+    System.out.println("Last: " + reduce);
+  }
 }

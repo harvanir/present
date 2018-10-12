@@ -18,6 +18,8 @@ public class FreePatternControllerInvoker {
 
   private SmsService smsService;
 
+  private BulkService bulkService;
+
   @Autowired
   public void setWhatsAppService(WhatsAppService whatsAppService) {
     this.whatsAppService = whatsAppService;
@@ -28,6 +30,11 @@ public class FreePatternControllerInvoker {
     this.smsService = smsService;
   }
 
+  @Autowired
+  public void setBulkService(BulkService bulkService) {
+    this.bulkService = bulkService;
+  }
+
   @GetMapping(path = "/resendWhatsApp")
   public Mono<Reactor> resendWhatsApp() {
     return whatsAppService.resendWhatsApp();
@@ -36,5 +43,10 @@ public class FreePatternControllerInvoker {
   @GetMapping(path = "/resendSms")
   public Mono<Reactor> resendSms() {
     return smsService.resendSms();
+  }
+
+  @GetMapping(path = "/resendAll")
+  public Mono<Reactor> resendAll() {
+    return bulkService.resendAll();
   }
 }

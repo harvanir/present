@@ -1,5 +1,9 @@
 package org.harvan.present.present1.designpattern.command;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,12 +14,25 @@ import org.springframework.context.annotation.Configuration;
 public class CommandConfiguration {
 
   @Bean
-  public ResendCommand resendWhatsAppCommand(Receiver whatsAppReceiver) {
+  public Command resendWhatsAppCommand(Receiver whatsAppReceiver) {
     return new ResendCommand(whatsAppReceiver);
   }
 
   @Bean
-  public ResendCommand resendSmsCommand(Receiver smsReceiver) {
+  public Command resendSmsCommand(Receiver smsReceiver) {
     return new ResendCommand(smsReceiver);
+  }
+
+  @Bean
+  public List<Command> allResendCommand(ApplicationContext applicationContext) {
+    Map<String, ResendCommand> resendCommandMap = applicationContext
+        .getBeansOfType(ResendCommand.class);
+
+    return new ArrayList<>(resendCommandMap.values());
+  }
+
+  @Bean
+  public Command resendAllCommand(List<Command> allResendCommand) {
+    return new ResendBulkCommand(allResendCommand);
   }
 }

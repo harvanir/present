@@ -10,7 +10,7 @@ public class ResendCommand implements Command {
 
   private Receiver receiver;
 
-  public ResendCommand(Receiver receiver) {
+  ResendCommand(Receiver receiver) {
     this.receiver = receiver;
   }
 

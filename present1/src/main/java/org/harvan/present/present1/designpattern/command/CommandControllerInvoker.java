@@ -14,18 +14,25 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/command")
 public class CommandControllerInvoker {
 
-  private ResendCommand resendWhatsAppCommand;
+  private Command resendWhatsAppCommand;
 
-  private ResendCommand resendSmsCommand;
+  private Command resendSmsCommand;
+
+  private Command resendAllCommand;
 
   @Autowired
-  public void setResendWhatsAppCommand(ResendCommand resendWhatsAppCommand) {
+  public void setResendWhatsAppCommand(Command resendWhatsAppCommand) {
     this.resendWhatsAppCommand = resendWhatsAppCommand;
   }
 
   @Autowired
-  public void setResendSmsCommand(ResendCommand resendSmsCommand) {
+  public void setResendSmsCommand(Command resendSmsCommand) {
     this.resendSmsCommand = resendSmsCommand;
+  }
+
+  @Autowired
+  public void setResendAllCommand(Command resendAllCommand) {
+    this.resendAllCommand = resendAllCommand;
   }
 
   @GetMapping(path = "/resendWhatsApp")
@@ -36,5 +43,10 @@ public class CommandControllerInvoker {
   @GetMapping(path = "/resendSms")
   public Mono<Reactor> resendSms() {
     return resendSmsCommand.execute();
+  }
+
+  @GetMapping(path = "/resendAll")
+  public Mono<Reactor> resendAll() {
+    return resendAllCommand.execute();
   }
 }
