@@ -17,4 +17,3 @@ Java Reflection & Design Pattern by example
 
 ## Behavioral Patterns
 - <b>Command Pattern</b>
-- <b>Filter (Chain of responsibility) Pattern</b>
