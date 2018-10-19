@@ -22,4 +22,12 @@ public class WhatsAppReceiver implements Receiver {
 
     return Mono.just(Reactor.EXECUTED);
   }
+
+  @Override
+  public Mono<Reactor> doHealthCheck() {
+    LOGGER.debug("Construct payload...");
+    LOGGER.debug("Send WhatsApp health check...");
+
+    return Mono.just(Reactor.EXECUTED);
+  }
 }

@@ -9,4 +9,6 @@ import reactor.core.publisher.Mono;
 public interface Receiver {
 
   Mono<Reactor> doResend();
+
+  Mono<Reactor> doHealthCheck();
 }
